@@ -139,6 +139,17 @@ func NewClient(apiKey, secretKey string) *Client {
 	}
 }
 
+func NewClientWithCustomHttpClient(apiKey, secretKey string, customClient *http.Client) *Client {
+	return &Client{
+		APIKey:     apiKey,
+		SecretKey:  secretKey,
+		BaseURL:    "https://api.binance.com",
+		UserAgent:  "Binance/golang",
+		HTTPClient: customClient,
+		Logger:     log.New(os.Stderr, "Binance-golang ", log.LstdFlags),
+	}
+}
+
 type doFunc func(req *http.Request) (*http.Response, error)
 
 // Client define API client
