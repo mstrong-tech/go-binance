@@ -480,4 +480,4 @@ func (c *Client) NewListMarginTradesService() *ListMarginTradesService {
 // NewGetMaxBorrowableService init get max borrowable service
 func (c *Client) NewGetMaxBorrowableService() *GetMaxBorrowableService {
 	return &GetMaxBorrowableService{c: c}
-}
+} 
